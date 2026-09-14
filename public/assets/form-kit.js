@@ -173,6 +173,11 @@
     document.querySelectorAll('.lang button').forEach(function (b) {
       b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
     });
+
+    /* Si ya se está viendo el resultado, cambiar de idioma debe traducirlo
+       también: las etiquetas de resultado no llevan data-i18n porque cuál
+       toca se decide al calcular el puntaje, no al cargar la página. */
+    if (typeof pintarResultado === 'function') pintarResultado();
   }
 
   function mountLangSwitch() {
@@ -196,19 +201,34 @@
       hidden.name = name;
       group.appendChild(hidden);
 
+      /* Con data-multi la persona puede marcar varias opciones y viajan
+         separadas por coma. Sin él, elegir una descarta la anterior. */
+      var multi = group.hasAttribute('data-multi');
+
       group.addEventListener('click', function (ev) {
         var chip = ev.target.closest('.chip');
         if (!chip) return;
         var already = chip.getAttribute('aria-pressed') === 'true';
-        group.querySelectorAll('.chip').forEach(function (c) {
-          c.setAttribute('aria-pressed', 'false');
-        });
-        if (!already) {
-          chip.setAttribute('aria-pressed', 'true');
-          hidden.value = chip.dataset.value;
+
+        if (multi) {
+          chip.setAttribute('aria-pressed', already ? 'false' : 'true');
+          var marcadas = [];
+          group.querySelectorAll('.chip[aria-pressed=true]').forEach(function (c) {
+            marcadas.push(c.dataset.value);
+          });
+          hidden.value = marcadas.join(',');
         } else {
-          hidden.value = '';           // volver a tocar la opción la deselecciona
+          group.querySelectorAll('.chip').forEach(function (c) {
+            c.setAttribute('aria-pressed', 'false');
+          });
+          if (!already) {
+            chip.setAttribute('aria-pressed', 'true');
+            hidden.value = chip.dataset.value;
+          } else {
+            hidden.value = '';         // volver a tocar la opción la deselecciona
+          }
         }
+
         group.closest('.field').classList.remove('invalid');
         syncConditionals();
       });
@@ -333,6 +353,44 @@
     return CFG.linea;
   }
 
+  /* ===================== AUTODIAGNÓSTICOS (opcional) =====================
+     Solo actúa si el formulario declara CFG.scoring. Cada pregunta puntuada
+     es un grupo .chips con data-score y valores numéricos; el puntaje es su
+     promedio, y el rango decide qué resultado se muestra al terminar.
+
+     El cálculo ocurre ANTES de enviar, así que el resultado aparece aunque
+     el envío falle por falta de señal: la persona ya respondió, y quedarse
+     sin su resultado por un problema de red sería lo peor que podría pasar.
+     -------------------------------------------------------------------- */
+
+  var ULTIMO_RESULTADO = null;
+
+  function calcularPuntaje() {
+    if (!CFG.scoring) return null;
+
+    var suma = 0, respondidas = 0, total = 0;
+    form.querySelectorAll('.chips[data-score]').forEach(function (g) {
+      if (!isVisible(g)) return;
+      total++;
+      var h = g.querySelector('input[type=hidden]');
+      if (h && h.value !== '') { suma += Number(h.value); respondidas++; }
+    });
+    if (!respondidas) return null;
+
+    var puntaje = Math.round(suma / respondidas);
+    var rango = null;
+    (CFG.scoring.ranges || []).forEach(function (r) {
+      if (rango === null && puntaje >= r.min && puntaje <= r.max) rango = r;
+    });
+
+    return {
+      puntaje: puntaje,
+      resultado: rango ? rango.key : null,
+      preguntas_respondidas: respondidas,
+      preguntas_totales: total
+    };
+  }
+
   function collect() {
     var params = new URLSearchParams(location.search);
     var campos = {};
@@ -344,6 +402,19 @@
       var v = (el.value || '').trim();
       if (v) campos[el.name] = v;
     });
+
+    /* El puntaje y el resultado viajan como campos más: el CRM los guarda
+       en `respuestas` y se pueden filtrar igual que cualquier otra respuesta. */
+    if (ULTIMO_RESULTADO) {
+      campos.puntaje   = ULTIMO_RESULTADO.puntaje;
+      campos.resultado = ULTIMO_RESULTADO.resultado;
+    }
+
+    /* Traducción de códigos propios del formulario a los que el CRM ya
+       filtra (por ejemplo `plazo` → `cuando`). Vive en cada página. */
+    if (typeof CFG.derive === 'function') {
+      try { CFG.derive(campos); } catch (e) {}
+    }
 
     return {
       form_id:     CFG.formId,
@@ -468,11 +539,33 @@
 
   /* ======================== PANTALLA DE ÉXITO ======================== */
 
+  function pintarResultado() {
+    if (!ULTIMO_RESULTADO) return;
+    var caja = document.querySelector('.result');
+    if (!caja) return;
+
+    var nombre = (form.querySelector('[name=nombre]') || {}).value || '';
+    var saludo = caja.querySelector('.result-hi');
+    if (saludo) saludo.textContent = t('result_hi').replace('[nombre]', nombre.split(' ')[0] || '');
+
+    var n = caja.querySelector('.result-score');
+    if (n) n.textContent = ULTIMO_RESULTADO.puntaje + '%';
+
+    var k = ULTIMO_RESULTADO.resultado;
+    var etiqueta = caja.querySelector('.result-label');
+    var texto    = caja.querySelector('.result-desc');
+    if (k && etiqueta) etiqueta.textContent = t(k + '_label');
+    if (k && texto)    texto.textContent    = t(k + '_desc');
+
+    caja.classList.add('on');
+  }
+
   function showDone(queued) {
     document.querySelector('.form-wrap').style.display = 'none';
     var done = document.querySelector('.done');
     done.classList.add('on');
     done.querySelector('.queued').classList.toggle('on', !!queued);
+    pintarResultado();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -483,6 +576,8 @@
     form.querySelectorAll('.field').forEach(function (f) { f.classList.remove('invalid'); });
     var b = document.querySelector('.form-err'); if (b) b.classList.remove('on');
     syncConditionals();
+    ULTIMO_RESULTADO = null;
+    var res = document.querySelector('.result'); if (res) res.classList.remove('on');
     document.querySelector('.done').classList.remove('on');
     document.querySelector('.form-wrap').style.display = '';
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -528,6 +623,7 @@
       btn.disabled = true;
       btn.textContent = t('sending');
 
+      ULTIMO_RESULTADO = calcularPuntaje();
       var payload = collect();
 
       post(payload)

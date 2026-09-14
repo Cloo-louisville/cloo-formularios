@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>How Regulated Is Your Leadership?</title>
+<link rel="stylesheet" href="assets/form-kit.css">
+</head>
+<body class="tema-cielo">
+
+<div class="shell">
+
+  <div class="topbar">
+    <span class="brandmark">CIELO</span>
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+  </div>
+
+  <div class="form-wrap">
+
+    <header class="hero">
+      <p class="eyebrow" data-i18n="eyebrow"></p>
+      <h1 data-i18n="title"></h1>
+      <p data-i18n="intro"></p>
+      <p class="disclaimer" data-i18n="disclaimer"></p>
+      <span class="event-badge"></span>
+    </header>
+
+    <div class="form-err" role="alert"></div>
+
+    <form class="card" novalidate>
+
+      <div class="hp" aria-hidden="true">
+        <label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      </div>
+
+      <!-- ============ contacto ============ -->
+
+      <div class="field">
+        <label class="label" for="nombre"><span data-i18n="f_name"></span><span class="req">*</span></label>
+        <input type="text" id="nombre" name="nombre" data-req autocomplete="name" data-i18n-ph="ph_name">
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field">
+        <label class="label" for="email"><span data-i18n="f_email"></span><span class="req">*</span></label>
+        <input type="email" id="email" name="email" data-req autocomplete="email" inputmode="email"
+               autocapitalize="off" spellcheck="false" data-i18n-ph="ph_email_work">
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field">
+        <label class="label" for="empresa"><span data-i18n="f_org"></span></label>
+        <input type="text" id="empresa" name="empresa" autocomplete="organization" data-i18n-ph="ph_optional">
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field">
+        <label class="label" for="rol"><span data-i18n="f_role"></span></label>
+        <input type="text" id="rol" name="rol" autocomplete="organization-title" data-i18n-ph="ph_optional">
+        <span class="field-err"></span>
+      </div>
+
+      <!-- ============ 12 preguntas puntuadas ============
+           La escala y sus valores son idénticos en las doce:
+           Rarely 0 · Occasionally 25 · Sometimes 50 · Often 75 · Consistently 100.
+           El promedio de las doce es el puntaje final sobre 100.
+           ================================================= -->
+
+      <p class="scale-intro" data-i18n="scale_intro"></p>
+
+      <div class="field q">
+        <span class="cat" data-i18n="cat_comprehend"></span>
+        <label class="label"><span data-i18n="q1"></span><span class="req">*</span></label>
+        <div class="chips scale" data-name="p1" data-score data-req>
+          <button type="button" class="chip" data-value="0"   aria-pressed="false" data-i18n="sc_rarely"></button>
+          <button type="button" class="chip" data-value="25"  aria-pressed="false" data-i18n="sc_occasionally"></button>
+          <button type="button" class="chip" data-value="50"  aria-pressed="false" data-i18n="sc_sometimes"></button>
+          <button type="button" class="chip" data-value="75"  aria-pressed="false" data-i18n="sc_often"></button>
+          <button type="button" class="chip" data-value="100" aria-pressed="false" data-i18n="sc_consistently"></button>
+        </div>
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field q">
+        <label class="label"><span data-i18n="q2"></span><span class="req">*</span></label>
+        <div class="chips scale" data-name="p2" data-score data-req>
+          <button type="button" class="chip" data-value="0"   aria-pressed="false" data-i18n="sc_rarely"></button>
+          <button type="button" class="chip" data-value="25"  aria-pressed="false" data-i18n="sc_occasionally"></button>
+          <button type="button" class="chip" data-value="50"  aria-pressed="false" data-i18n="sc_sometimes"></button>
+          <button type="button" class="chip" data-value="75"  aria-pressed="false" data-i18n="sc_often"></button>
+          <button type="button" class="chip" data-value="100" aria-pressed="false" data-i18n="sc_consistently"></button>
+        </div>
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field q">
+        <span class="cat" data-i18n="cat_identify"></span>
+        <label class="label"><span data-i18n="q3"></span><span class="req">*</span></label>
+        <div class="chips scale" data-name="p3" data-score data-req>
+          <button type="button" class="chip" data-value="0"   aria-pressed="false" data-i18n="sc_rarely"></button>
+          <button type="button" class="chip" data-value="25"  aria-pressed="false" data-i18n="sc_occasionally"></button>
+          <button type="button" class="chip" data-value="50"  aria-pressed="false" data-i18n="sc_sometimes"></button>
+          <button type="button" class="chip" data-value="75"  aria-pressed="false" data-i18n="sc_often"></button>
+          <button type="button" class="chip" data-value="100" aria-pressed="false" data-i18n="sc_consistently"></button>
+        </div>
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field q">
+        <label class="label"><span data-i18n="q4"></span><span class="req">*</span></label>
+        <div class="chips scale" data-name="p4" data-score data-req>
+          <button type="button" class="chip" data-value="0"   aria-pressed="false" data-i18n="sc_rarely"></button>
+          <button type="button" class="chip" data-value="25"  aria-pressed="false" data-i18n="sc_occasionally"></button>
+          <button type="button" class="chip" data-value="50"  aria-pressed="false" data-i18n="sc_sometimes"></button>
+          <button type="button" class="chip" data-value="75"  aria-pressed="false" data-i18n="sc_often"></button>
+          <button type="button" class="chip" data-value="100" aria-pressed="false" data-i18n="sc_consistently"></button>
+        </div>
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field q">
+        <span class="cat" data-i18n="cat_engage"></span>
+        <label class="label"><span data-i18n="q5"></span><span class="req">*</span></label>
+        <div class="chips scale" data-name="p5" data-score data-req>
+          <button type="button" class="chip" data-value="0"   aria-pressed="false" data-i18n="sc_rarely"></button>
+          <button type="button" class="chip" data-value="25"  aria-pressed="false" data-i18n="sc_occasionally"></button>
+          <button type="button" class="chip" data-value="50"  aria-pressed="false" data-i18n="sc_sometimes"></button>
+          <button type="button" class="chip" data-value="75"  aria-pressed="false" data-i18n="sc_often"></button>
+          <button type="button" class="chip" data-value="100" aria-pressed="false" data-i18n="sc_consistently"></button>
+        </div>
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field q">
+        <label class="label"><span data-i18n="q6"></span><span class="req">*</span></label>
+        <div class="chips scale" data-name="p6" data-score data-req>
+          <button type="button" class="chip" data-value="0"   aria-pressed="false" data-i18n="sc_rarely"></button>
+          <button type="button" class="chip" data-value="25"  aria-pressed="false" data-i18n="sc_occasionally"></button>
+          <button type="button" class="chip" data-value="50"  aria-pressed="false" data-i18n="sc_sometimes"></button>
+          <button type="button" class="chip" data-value="75"  aria-pressed="false" data-i18n="sc_often"></button>
+          <button type="button" class="chip" data-value="100" aria-pressed="false" data-i18n="sc_consistently"></button>
+        </div>
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field q">
+        <span class="cat" data-i18n="cat_lead"></span>
+        <label class="label"><span data-i18n="q7"></span><span class="req">*</span></label>
+        <div class="chips scale" data-name="p7" data-score data-req>
+          <button type="button" class="chip" data-value="0"   aria-pressed="false" data-i18n="sc_rarely"></button>
+          <button type="button" class="chip" data-value="25"  aria-pressed="false" data-i18n="sc_occasionally"></button>
+          <button type="button" class="chip" data-value="50"  aria-pressed="false" data-i18n="sc_sometimes"></button>
+          <button type="button" class="chip" data-value="75"  aria-pressed="false" data-i18n="sc_often"></button>
+          <button type="button" class="chip" data-value="100" aria-pressed="false" data-i18n="sc_consistently"></button>
+        </div>
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field q">
+        <label class="label"><span data-i18n="q8"></span><span class="req">*</span></label>
+        <div class="chips scale" data-name="p8" data-score data-req>
+          <button type="button" class="chip" data-value="0"   aria-pressed="false" data-i18n="sc_rarely"></button>
+          <button type="button" class="chip" data-value="25"  aria-pressed="false" data-i18n="sc_occasionally"></button>
+          <button type="button" class="chip" data-value="50"  aria-pressed="false" data-i18n="sc_sometimes"></button>
+          <button type="button" class="chip" data-value="75"  aria-pressed="false" data-i18n="sc_often"></button>
+          <button type="button" class="chip" data-value="100" aria-pressed="false" data-i18n="sc_consistently"></button>
+        </div>
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field q">
+        <span class="cat" data-i18n="cat_optimize"></span>
+        <label class="label"><span data-i18n="q9"></span><span class="req">*</span></label>
+        <div class="chips scale" data-name="p9" data-score data-req>
+          <button type="button" class="chip" data-value="0"   aria-pressed="false" data-i18n="sc_rarely"></button>
+          <button type="button" class="chip" data-value="25"  aria-pressed="false" data-i18n="sc_occasionally"></button>
+          <button type="button" class="chip" data-value="50"  aria-pressed="false" data-i18n="sc_sometimes"></button>
+          <button type="button" class="chip" data-value="75"  aria-pressed="false" data-i18n="sc_often"></button>
+          <button type="button" class="chip" data-value="100" aria-pressed="false" data-i18n="sc_consistently"></button>
+        </div>
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field q">
+        <label class="label"><span data-i18n="q10"></span><span class="req">*</span></label>
+        <div class="chips scale" data-name="p10" data-score data-req>
+          <button type="button" class="chip" data-value="0"   aria-pressed="false" data-i18n="sc_rarely"></button>
+          <button type="button" class="chip" data-value="25"  aria-pressed="false" data-i18n="sc_occasionally"></button>
+          <button type="button" class="chip" data-value="50"  aria-pressed="false" data-i18n="sc_sometimes"></button>
+          <button type="button" class="chip" data-value="75"  aria-pressed="false" data-i18n="sc_often"></button>
+          <button type="button" class="chip" data-value="100" aria-pressed="false" data-i18n="sc_consistently"></button>
+        </div>
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field q">
+        <span class="cat" data-i18n="cat_impact"></span>
+        <label class="label"><span data-i18n="q11"></span><span class="req">*</span></label>
+        <div class="chips scale" data-name="p11" data-score data-req>
+          <button type="button" class="chip" data-value="0"   aria-pressed="false" data-i18n="sc_rarely"></button>
+          <button type="button" class="chip" data-value="25"  aria-pressed="false" data-i18n="sc_occasionally"></button>
+          <button type="button" class="chip" data-value="50"  aria-pressed="false" data-i18n="sc_sometimes"></button>
+          <button type="button" class="chip" data-value="75"  aria-pressed="false" data-i18n="sc_often"></button>
+          <button type="button" class="chip" data-value="100" aria-pressed="false" data-i18n="sc_consistently"></button>
+        </div>
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field q">
+        <label class="label"><span data-i18n="q12"></span><span class="req">*</span></label>
+        <div class="chips scale" data-name="p12" data-score data-req>
+          <button type="button" class="chip" data-value="0"   aria-pressed="false" data-i18n="sc_rarely"></button>
+          <button type="button" class="chip" data-value="25"  aria-pressed="false" data-i18n="sc_occasionally"></button>
+          <button type="button" class="chip" data-value="50"  aria-pressed="false" data-i18n="sc_sometimes"></button>
+          <button type="button" class="chip" data-value="75"  aria-pressed="false" data-i18n="sc_often"></button>
+          <button type="button" class="chip" data-value="100" aria-pressed="false" data-i18n="sc_consistently"></button>
+        </div>
+        <span class="field-err"></span>
+      </div>
+
+      <!-- ============ 13, 14 y 15: no puntúan ============ -->
+
+      <div class="field">
+        <label class="label" for="presion"><span data-i18n="q13"></span></label>
+        <textarea id="presion" name="presion" data-i18n-ph="ph_optional"></textarea>
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field">
+        <label class="label"><span data-i18n="q14"></span><span class="req">*</span></label>
+        <div class="chips stack" data-name="fortalecer" data-req>
+          <button type="button" class="chip" data-value="calm"          aria-pressed="false" data-i18n="st_calm"></button>
+          <button type="button" class="chip" data-value="communication" aria-pressed="false" data-i18n="st_communication"></button>
+          <button type="button" class="chip" data-value="focus"         aria-pressed="false" data-i18n="st_focus"></button>
+          <button type="button" class="chip" data-value="boundaries"    aria-pressed="false" data-i18n="st_boundaries"></button>
+          <button type="button" class="chip" data-value="uncertainty"   aria-pressed="false" data-i18n="st_uncertainty"></button>
+          <button type="button" class="chip" data-value="team_trust"    aria-pressed="false" data-i18n="st_team_trust"></button>
+          <button type="button" class="chip" data-value="other"         aria-pressed="false" data-i18n="st_other"></button>
+        </div>
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field">
+        <label class="label"><span data-i18n="q15"></span><span class="req">*</span></label>
+        <div class="chips stack" data-name="apoyo" data-req>
+          <button type="button" class="chip" data-value="yes"   aria-pressed="false" data-i18n="sp_yes"></button>
+          <button type="button" class="chip" data-value="maybe" aria-pressed="false" data-i18n="sp_maybe"></button>
+          <button type="button" class="chip" data-value="no"    aria-pressed="false" data-i18n="sp_no"></button>
+        </div>
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field">
+        <label class="consent">
+          <input type="checkbox" name="consentimiento" data-req>
+          <span data-i18n="consent"></span>
+        </label>
+        <span class="field-err"></span>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="submit" data-i18n="submit"></button>
+        <p class="legal" data-i18n="legal"></p>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- ============ pantalla de resultado ============ -->
+
+  <div class="done">
+    <div class="mark"></div>
+    <h2 data-i18n="done_title"></h2>
+    <p data-i18n="done_text"></p>
+    <div class="queued" data-i18n="queued"></div>
+
+    <div class="result">
+      <div class="result-card">
+        <p class="result-hi"></p>
+        <span class="result-score"></span>
+        <span class="result-label"></span>
+        <p class="result-desc"></p>
+      </div>
+
+      <div class="offer">
+        <h3 data-i18n="offer_title"></h3>
+        <p data-i18n="offer_text"></p>
+        <ul>
+          <li data-i18n="offer_1"></li>
+          <li data-i18n="offer_2"></li>
+          <li data-i18n="offer_3"></li>
+          <li data-i18n="offer_4"></li>
+        </ul>
+        <p class="offer-next" data-i18n="offer_next"></p>
+      </div>
+
+      <p class="disclaimer" data-i18n="disclaimer"></p>
+    </div>
+
+    <button type="button" class="again" data-i18n="again"></button>
+  </div>
+
+  <footer>CIELO Breathwork · cielobreathwork.com</footer>
+</div>
+
+<script>
+window.FORM_CONFIG = {
+  formId: 'leader-assessment',
+  servicio: 'leader-assessment',
+  linea: 'B2B',
+  defaultLang: 'en',
+
+  /* Rangos de resultado del Documento 1. El puntaje es el promedio de las
+     doce preguntas, cada una de 0 a 100, así que ya viene en porcentaje. */
+  scoring: {
+    ranges: [
+      { min: 80, max: 100, key: 'r_grounded'  },
+      { min: 60, max: 79,  key: 'r_capable'   },
+      { min: 40, max: 59,  key: 'r_reaction'  },
+      { min: 0,  max: 39,  key: 'r_attention' }
+    ]
+  },
+
+  i18n: {
+    en: {
+      page_title: 'How Regulated Is Your Leadership?',
+      eyebrow: 'CIELO Breathwork',
+      title: 'How Regulated Is Your Leadership?',
+      intro: 'Leadership is not only about what you know. It is also about how you respond when pressure, uncertainty, conflict, or competing demands arise. This brief self-assessment will help you identify how effectively you recognize and manage your internal state while leading others.',
+      disclaimer: 'This is an educational reflection tool and is not a clinical or diagnostic assessment.',
+
+      f_name: 'Name',
+      ph_name: 'e.g. Maria Gonzalez',
+      f_email: 'Email address',
+      ph_email_work: 'name@company.com',
+      f_org: 'Organization or company',
+      f_role: 'Leadership role',
+      ph_optional: 'Optional',
+
+      scale_intro: 'Rate each statement according to how consistently it describes you.',
+      sc_rarely: 'Rarely',
+      sc_occasionally: 'Occasionally',
+      sc_sometimes: 'Sometimes',
+      sc_often: 'Often',
+      sc_consistently: 'Consistently',
+
+      cat_comprehend: 'Comprehend',
+      cat_identify: 'Identify',
+      cat_engage: 'Engage',
+      cat_lead: 'Lead',
+      cat_optimize: 'Optimize',
+      cat_impact: 'Leadership impact',
+
+      q1: 'I can clearly identify the real problem before trying to solve it.',
+      q2: 'I understand how pressure affects my thinking, communication, and decisions.',
+      q3: 'I recognize the physical and emotional signs that I am becoming overwhelmed.',
+      q4: 'I notice my habitual reactions before they influence my behavior.',
+      q5: 'I have practical tools that help me regulate during stressful situations.',
+      q6: 'I can pause and shift my internal state before responding.',
+      q7: 'I communicate intentionally, even when a conversation is difficult.',
+      q8: 'I make decisions based on the desired outcome rather than my immediate emotional reaction.',
+      q9: 'I maintain habits and boundaries that support sustainable leadership.',
+      q10: 'I create conditions that help my team remain focused and effective.',
+      q11: 'My presence helps others feel more grounded during uncertainty.',
+      q12: 'I recover effectively after stressful events instead of carrying them into the rest of my day.',
+
+      q13: 'Which leadership situation is currently creating the most pressure for you?',
+      q14: 'Which area would you most like to strengthen?',
+      st_calm: 'Responding calmly under pressure',
+      st_communication: 'Communication and difficult conversations',
+      st_focus: 'Focus and decision-making',
+      st_boundaries: 'Boundaries and burnout prevention',
+      st_uncertainty: 'Leading through uncertainty or change',
+      st_team_trust: 'Supporting team trust and performance',
+      st_other: 'Other',
+
+      q15: 'Would you like support applying your results?',
+      sp_yes: 'Yes, send me information about the discounted leadership session.',
+      sp_maybe: 'Possibly — I would like more information.',
+      sp_no: 'Not right now.',
+
+      consent: 'I agree that CIELO may send me my results, related resources, and information about leadership support. I can unsubscribe at any time.',
+      submit: 'See my results',
+      sending: 'Calculating…',
+      legal: 'Your details are used only to send your results and follow up. We never share them with third parties.',
+
+      done_title: 'Your results are ready',
+      done_text: '',
+      result_hi: 'Thank you for completing the Regulated Leader Assessment, [nombre].',
+
+      r_grounded_label: 'Grounded and Intentional',
+      r_grounded_desc: 'You demonstrate strong awareness of your internal state and generally respond intentionally under pressure. Your next opportunity is strengthening consistency and learning how to help your team develop the same skills.',
+      r_capable_label: 'Capable but Stretched',
+      r_capable_desc: 'You have many effective leadership skills, but stress or competing demands may make them difficult to access consistently. Strengthening your ability to pause, regulate, and choose your response can improve your leadership impact.',
+      r_reaction_label: 'Leading in Reaction Mode',
+      r_reaction_desc: 'Pressure may be influencing your communication, focus, boundaries, or decisions more than you realize. Developing practical regulation tools can help you create space between a trigger and your response.',
+      r_attention_label: 'Regulation Needs Attention',
+      r_attention_desc: 'Your current demands may be exceeding your available capacity. The priority is not another productivity strategy. It is developing practical ways to recognize overload, regulate your state, and lead without remaining in constant survival mode.',
+
+      offer_title: 'Ready to Apply Your Results?',
+      offer_text: 'As a conference attendee, you are invited to receive 50% off your first Regulated Leadership Session. During this virtual session, we will:',
+      offer_1: 'Review your assessment results',
+      offer_2: 'Identify the leadership situation creating the most pressure',
+      offer_3: 'Determine which CIELO Framework areas need the most attention',
+      offer_4: 'Develop practical next steps you can begin using immediately',
+      offer_next: 'Cielo will be in touch personally to arrange your session.',
+
+      queued: 'No signal right now: your answers were saved on this device and will be sent as soon as the connection returns. Your result is shown above either way.',
+      again: 'Take it for someone else',
+
+      err_banner: 'Something is missing. Please check the highlighted questions.',
+      err_required: 'This field is required.',
+      err_email: 'Please check the email address.',
+      err_choose: 'Please choose an option.',
+      err_consent: 'We need your permission to send your results.',
+
+      admin_pending: 'responses saved on this device, not yet sent to the CRM.',
+      admin_download: 'Download CSV',
+      admin_clear: 'Clear',
+      admin_confirm: 'This deletes the responses saved on this device and they cannot be recovered. Have you already downloaded the CSV?'
+    },
+
+    es: {
+      page_title: '¿Qué tan regulado es tu liderazgo?',
+      eyebrow: 'CIELO Breathwork',
+      title: '¿Qué tan regulado es tu liderazgo?',
+      intro: 'Liderar no es solo lo que sabes. También es cómo respondes cuando aparecen la presión, la incertidumbre, el conflicto o las demandas que compiten entre sí. Esta breve autoevaluación te ayudará a identificar con qué eficacia reconoces y manejas tu estado interno mientras lideras a otros.',
+      disclaimer: 'Es una herramienta educativa de reflexión, no una evaluación clínica ni diagnóstica.',
+
+      f_name: 'Nombre',
+      ph_name: 'Ej. María González',
+      f_email: 'Correo electrónico',
+      ph_email_work: 'nombre@empresa.com',
+      f_org: 'Empresa u organización',
+      f_role: 'Rol de liderazgo',
+      ph_optional: 'Opcional',
+
+      scale_intro: 'Califica cada afirmación según con qué consistencia te describe.',
+      sc_rarely: 'Rara vez',
+      sc_occasionally: 'De vez en cuando',
+      sc_sometimes: 'A veces',
+      sc_often: 'A menudo',
+      sc_consistently: 'De forma consistente',
+
+      cat_comprehend: 'Comprender',
+      cat_identify: 'Identificar',
+      cat_engage: 'Accionar',
+      cat_lead: 'Liderar',
+      cat_optimize: 'Optimizar',
+      cat_impact: 'Impacto en el liderazgo',
+
+      q1: 'Puedo identificar con claridad el problema real antes de intentar resolverlo.',
+      q2: 'Entiendo cómo la presión afecta mi pensamiento, mi comunicación y mis decisiones.',
+      q3: 'Reconozco las señales físicas y emocionales de que me estoy sobrecargando.',
+      q4: 'Noto mis reacciones habituales antes de que influyan en mi comportamiento.',
+      q5: 'Tengo herramientas prácticas que me ayudan a regularme en situaciones de estrés.',
+      q6: 'Puedo hacer una pausa y cambiar mi estado interno antes de responder.',
+      q7: 'Me comunico con intención, incluso cuando la conversación es difícil.',
+      q8: 'Decido en función del resultado que busco, no de mi reacción emocional inmediata.',
+      q9: 'Mantengo hábitos y límites que sostienen un liderazgo sostenible.',
+      q10: 'Creo condiciones que ayudan a mi equipo a mantenerse enfocado y efectivo.',
+      q11: 'Mi presencia ayuda a que otros se sientan más firmes durante la incertidumbre.',
+      q12: 'Me recupero bien después de un evento estresante en vez de arrastrarlo el resto del día.',
+
+      q13: '¿Qué situación de liderazgo te está generando más presión ahora mismo?',
+      q14: '¿Qué área te gustaría fortalecer más?',
+      st_calm: 'Responder con calma bajo presión',
+      st_communication: 'Comunicación y conversaciones difíciles',
+      st_focus: 'Foco y toma de decisiones',
+      st_boundaries: 'Límites y prevención del agotamiento',
+      st_uncertainty: 'Liderar en la incertidumbre o el cambio',
+      st_team_trust: 'Sostener la confianza y el desempeño del equipo',
+      st_other: 'Otra',
+
+      q15: '¿Te gustaría apoyo para aplicar tus resultados?',
+      sp_yes: 'Sí, envíenme información sobre la sesión de liderazgo con descuento.',
+      sp_maybe: 'Quizá — me gustaría más información.',
+      sp_no: 'Ahora no.',
+
+      consent: 'Acepto que CIELO me envíe mis resultados, recursos relacionados e información sobre apoyo en liderazgo. Puedo darme de baja cuando quiera.',
+      submit: 'Ver mis resultados',
+      sending: 'Calculando…',
+      legal: 'Tus datos se usan solo para enviarte tus resultados y dar seguimiento. No los compartimos con terceros.',
+
+      done_title: 'Tus resultados están listos',
+      done_text: '',
+      result_hi: 'Gracias por completar la evaluación, [nombre].',
+
+      r_grounded_label: 'Firme e intencional',
+      r_grounded_desc: 'Muestras una fuerte conciencia de tu estado interno y por lo general respondes con intención bajo presión. Tu siguiente oportunidad es reforzar la consistencia y aprender a ayudar a tu equipo a desarrollar las mismas habilidades.',
+      r_capable_label: 'Capaz pero exigido',
+      r_capable_desc: 'Tienes muchas habilidades de liderazgo efectivas, pero el estrés o las demandas que compiten entre sí pueden dificultar que las uses de forma consistente. Reforzar tu capacidad de pausar, regularte y elegir tu respuesta puede mejorar tu impacto como líder.',
+      r_reaction_label: 'Liderando en modo reacción',
+      r_reaction_desc: 'La presión puede estar influyendo en tu comunicación, tu foco, tus límites o tus decisiones más de lo que percibes. Desarrollar herramientas prácticas de regulación te ayuda a crear espacio entre el detonante y tu respuesta.',
+      r_attention_label: 'La regulación necesita atención',
+      r_attention_desc: 'Es posible que las demandas actuales estén superando tu capacidad disponible. La prioridad no es otra estrategia de productividad. Es desarrollar formas prácticas de reconocer la sobrecarga, regular tu estado y liderar sin permanecer en modo supervivencia.',
+
+      offer_title: '¿Listo para aplicar tus resultados?',
+      offer_text: 'Como asistente al congreso, estás invitada a recibir 50% de descuento en tu primera Sesión de Liderazgo Regulado. Durante esta sesión virtual vamos a:',
+      offer_1: 'Revisar los resultados de tu evaluación',
+      offer_2: 'Identificar la situación de liderazgo que más presión te genera',
+      offer_3: 'Determinar qué áreas del Marco CIELO necesitan más atención',
+      offer_4: 'Definir pasos prácticos que puedas empezar a usar de inmediato',
+      offer_next: 'Cielo se pondrá en contacto personalmente para coordinar tu sesión.',
+
+      queued: 'Sin señal en este momento: tus respuestas quedaron guardadas en este dispositivo y se enviarán al recuperar conexión. Tu resultado se muestra arriba de todos modos.',
+      again: 'Registrar a otra persona',
+
+      err_banner: 'Falta completar algo. Revisa las preguntas marcadas.',
+      err_required: 'Este campo es obligatorio.',
+      err_email: 'Revisa el correo electrónico.',
+      err_choose: 'Elige una opción.',
+      err_consent: 'Necesitamos tu autorización para enviarte los resultados.',
+
+      admin_pending: 'respuestas guardadas en este dispositivo, aún sin enviar al CRM.',
+      admin_download: 'Descargar CSV',
+      admin_clear: 'Vaciar',
+      admin_confirm: 'Esto borra las respuestas guardadas en este dispositivo y no se pueden recuperar. ¿Ya descargaste el CSV?'
+    }
+  }
+};
+</script>
+<script src="assets/form-kit.js"></script>
+</body>
+</html>

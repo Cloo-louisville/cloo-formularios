@@ -239,6 +239,98 @@ footer{
 }
 .admin-actions button:hover{background:rgba(143,91,0,.08);}
 
+/* ============================================================
+   TEMA CIELO
+   Los cuatro formularios de captura usan el morado del sistema.
+   Los autodiagnósticos son material de CIELO Breathwork, y el
+   brand book le asigna azul profundo con oro suave, no morado.
+   Se aplica con <body class="tema-cielo">.
+   ============================================================ */
+body.tema-cielo{
+  --ground:#F7F8FB;
+  --surface:#FFFFFF;
+  --surface-2:#EEF2F9;
+  --ink:#131B2E;
+  --ink-2:#55607A;
+  --ink-3:#8A93A6;
+  --brand:#0A2E73;
+  --brand-deep:#061C4A;
+  --brand-soft:#E4EBF7;
+  --gold:#CDB47A;
+  --gold-ink:#7A6430;
+  --gold-soft:#F7F1E2;
+  --line:#DDE3EE;
+  --line-2:#C6D0E2;
+}
+
+/* ============================================================
+   ESCALA DE RESPUESTA (autodiagnósticos)
+   Cinco grados de "Rarely" a "Consistently". En el teléfono van
+   apiladas: cinco columnas de 68px no dejan leer la etiqueta.
+   ============================================================ */
+.scale{display:grid;grid-template-columns:1fr;gap:7px;}
+.scale .chip{width:100%;display:flex;align-items:center;gap:10px;min-height:46px;padding:10px 14px;}
+.scale .chip::before{
+  content:"";flex:none;width:15px;height:15px;border-radius:50%;
+  border:1.5px solid var(--line-2);background:var(--surface);
+  transition:border-color .13s,background .13s,box-shadow .13s;
+}
+.scale .chip[aria-pressed="true"]::before{
+  border-color:#fff;background:#fff;box-shadow:inset 0 0 0 3.5px var(--brand);
+}
+
+.scale-intro{
+  background:var(--brand-soft);border-radius:10px;padding:13px 15px;
+  margin:0 0 22px;font-size:14px;color:var(--ink-2);
+}
+
+/* La pregunta puntuada se agrupa por categoría y se separa: son doce
+   seguidas y sin respiro visual se leen como un muro. */
+.q{margin:0 0 20px;padding:0 0 20px;border-bottom:1px solid var(--line);}
+.q:last-of-type{border-bottom:none;padding-bottom:0;}
+.q .cat{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold-ink);font-weight:600;display:block;margin:0 0 5px;
+}
+.q .label{display:block;}
+
+/* ============================================================
+   RESULTADO DEL AUTODIAGNÓSTICO
+   Aparece en la pantalla final, con el puntaje y su descripción.
+   ============================================================ */
+.result{display:none;text-align:left;margin:26px 0 0;}
+.result.on{display:block;}
+.result-card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 22px;box-shadow:0 1px 3px rgba(19,27,46,.05);
+}
+.result-hi{color:var(--ink-2);margin:0 0 16px;font-size:15px;}
+.result-score{
+  font-family:var(--serif);font-size:44px;line-height:1;font-weight:600;
+  color:var(--brand);display:block;margin:0 0 6px;
+}
+.result-label{
+  font-family:var(--serif);font-size:23px;font-weight:600;color:var(--ink);
+  display:block;margin:0 0 12px;
+}
+.result-desc{color:var(--ink-2);margin:0;font-size:15.5px;}
+
+.offer{
+  background:var(--gold-soft);border:1px solid #E6D9B8;border-radius:var(--radius);
+  padding:20px 22px;margin:16px 0 0;
+}
+.offer h3{font-family:var(--serif);font-size:19px;font-weight:600;margin:0 0 8px;color:var(--ink);}
+.offer p{margin:0 0 10px;font-size:15px;color:var(--ink-2);}
+.offer ul{margin:0;padding-left:20px;color:var(--ink-2);font-size:15px;}
+.offer li{margin:0 0 5px;}
+.offer .cta{
+  display:inline-block;margin-top:14px;text-decoration:none;
+  background:var(--brand);color:#fff;font-weight:600;font-size:15px;
+  padding:13px 22px;border-radius:10px;min-height:var(--tap);line-height:26px;
+}
+.offer .cta:hover{background:var(--brand-deep);}
+.disclaimer{color:var(--ink-3);font-size:12.5px;margin:16px 0 0;line-height:1.45;}
+
 /* ---------- honeypot (anti-spam, nunca visible) ---------- */
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
 

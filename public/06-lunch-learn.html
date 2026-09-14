@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Complimentary Virtual Lunch-and-Learn</title>
+<link rel="stylesheet" href="assets/form-kit.css">
+</head>
+<body class="tema-cielo">
+
+<div class="shell">
+
+  <div class="topbar">
+    <span class="brandmark">CIELO</span>
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+  </div>
+
+  <div class="form-wrap">
+
+    <header class="hero">
+      <p class="eyebrow" data-i18n="eyebrow"></p>
+      <h1 data-i18n="title"></h1>
+      <p data-i18n="offer"></p>
+      <p data-i18n="intro"></p>
+      <span class="event-badge"></span>
+    </header>
+
+    <div class="form-err" role="alert"></div>
+
+    <form class="card" novalidate>
+
+      <div class="hp" aria-hidden="true">
+        <label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      </div>
+
+      <!-- ============ contacto ============ -->
+
+      <div class="field">
+        <label class="label" for="nombre"><span data-i18n="f_name"></span><span class="req">*</span></label>
+        <input type="text" id="nombre" name="nombre" data-req autocomplete="name" data-i18n-ph="ph_name">
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field">
+        <label class="label" for="email"><span data-i18n="f_email"></span><span class="req">*</span></label>
+        <input type="email" id="email" name="email" data-req autocomplete="email" inputmode="email"
+               autocapitalize="off" spellcheck="false" data-i18n-ph="ph_email_work">
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field">
+        <label class="label" for="telefono"><span data-i18n="f_phone"></span><span class="req">*</span></label>
+        <input type="tel" id="telefono" name="telefono" data-req autocomplete="tel" inputmode="tel"
+               data-i18n-ph="ph_phone">
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field">
+        <label class="label" for="empresa"><span data-i18n="f_org"></span><span class="req">*</span></label>
+        <input type="text" id="empresa" name="empresa" data-req autocomplete="organization"
+               data-i18n-ph="ph_company">
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field">
+        <label class="label" for="rol"><span data-i18n="f_role"></span><span class="req">*</span></label>
+        <input type="text" id="rol" name="rol" data-req autocomplete="organization-title"
+               data-i18n-ph="ph_role">
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field">
+        <label class="label"><span data-i18n="f_decision"></span><span class="req">*</span></label>
+        <div class="chips stack" data-name="decisor" data-req>
+          <button type="button" class="chip" data-value="yes"       aria-pressed="false" data-i18n="dc_yes"></button>
+          <button type="button" class="chip" data-value="recommend" aria-pressed="false" data-i18n="dc_recommend"></button>
+          <button type="button" class="chip" data-value="connect"   aria-pressed="false" data-i18n="dc_connect"></button>
+        </div>
+        <span class="field-err"></span>
+      </div>
+
+      <!-- ============ sobre el equipo ============ -->
+
+      <div class="field">
+        <label class="label"><span data-i18n="f_size"></span><span class="req">*</span></label>
+        <div class="chips stack" data-name="asistentes" data-req>
+          <button type="button" class="chip" data-value="lt10"   aria-pressed="false" data-i18n="sz_lt10"></button>
+          <button type="button" class="chip" data-value="10_25"  aria-pressed="false" data-i18n="sz_10_25"></button>
+          <button type="button" class="chip" data-value="26_50"  aria-pressed="false" data-i18n="sz_26_50"></button>
+          <button type="button" class="chip" data-value="gt50"   aria-pressed="false" data-i18n="sz_gt50"></button>
+          <button type="button" class="chip" data-value="unsure" aria-pressed="false" data-i18n="sz_unsure"></button>
+        </div>
+        <span class="field-err"></span>
+      </div>
+
+      <!-- data-multi: la pregunta original admite varias respuestas -->
+      <div class="field">
+        <label class="label"><span data-i18n="f_topics"></span><span class="req">*</span>
+          <span class="hint" data-i18n="f_topics_hint"></span>
+        </label>
+        <div class="chips stack" data-name="temas" data-multi data-req>
+          <button type="button" class="chip" data-value="stress"        aria-pressed="false" data-i18n="tp_stress"></button>
+          <button type="button" class="chip" data-value="focus"         aria-pressed="false" data-i18n="tp_focus"></button>
+          <button type="button" class="chip" data-value="burnout"       aria-pressed="false" data-i18n="tp_burnout"></button>
+          <button type="button" class="chip" data-value="communication" aria-pressed="false" data-i18n="tp_communication"></button>
+          <button type="button" class="chip" data-value="change"        aria-pressed="false" data-i18n="tp_change"></button>
+          <button type="button" class="chip" data-value="trust"         aria-pressed="false" data-i18n="tp_trust"></button>
+          <button type="button" class="chip" data-value="sales"         aria-pressed="false" data-i18n="tp_sales"></button>
+          <button type="button" class="chip" data-value="tools"         aria-pressed="false" data-i18n="tp_tools"></button>
+          <button type="button" class="chip" data-value="other"         aria-pressed="false" data-i18n="tp_other"></button>
+        </div>
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field">
+        <label class="label"><span data-i18n="f_session_lang"></span><span class="req">*</span></label>
+        <div class="chips" data-name="idioma_sesion" data-req>
+          <button type="button" class="chip" data-value="english" aria-pressed="false" data-i18n="sl_english"></button>
+          <button type="button" class="chip" data-value="spanish" aria-pressed="false" data-i18n="sl_spanish"></button>
+        </div>
+        <span class="field-err"></span>
+      </div>
+
+      <!-- ============ agenda ============ -->
+
+      <div class="field">
+        <label class="label"><span data-i18n="f_timing"></span><span class="req">*</span></label>
+        <div class="chips stack" data-name="plazo" data-req>
+          <button type="button" class="chip" data-value="30d"       aria-pressed="false" data-i18n="tm_30d"></button>
+          <button type="button" class="chip" data-value="2_3m"      aria-pressed="false" data-i18n="tm_2_3m"></button>
+          <button type="button" class="chip" data-value="this_year" aria-pressed="false" data-i18n="tm_this_year"></button>
+          <button type="button" class="chip" data-value="gathering" aria-pressed="false" data-i18n="tm_gathering"></button>
+        </div>
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field">
+        <label class="label"><span data-i18n="f_contact_pref"></span><span class="req">*</span></label>
+        <div class="chips" data-name="preferencia_contacto" data-req>
+          <button type="button" class="chip" data-value="email"    aria-pressed="false" data-i18n="cp_email"></button>
+          <button type="button" class="chip" data-value="call"     aria-pressed="false" data-i18n="cp_call"></button>
+          <button type="button" class="chip" data-value="whatsapp" aria-pressed="false" data-i18n="cp_whatsapp"></button>
+        </div>
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field">
+        <label class="label" for="nota"><span data-i18n="f_note"></span></label>
+        <textarea id="nota" name="nota" data-i18n-ph="ph_note"></textarea>
+        <span class="field-err"></span>
+      </div>
+
+      <div class="field">
+        <label class="consent">
+          <input type="checkbox" name="consentimiento" data-req>
+          <span data-i18n="consent"></span>
+        </label>
+        <span class="field-err"></span>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="submit" data-i18n="submit"></button>
+        <p class="legal" data-i18n="legal"></p>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="done">
+    <div class="mark"></div>
+    <h2 data-i18n="done_title"></h2>
+    <p data-i18n="done_text"></p>
+    <div class="queued" data-i18n="queued"></div>
+    <button type="button" class="again" data-i18n="again"></button>
+  </div>
+
+  <footer>CIELO Breathwork · cielobreathwork.com</footer>
+</div>
+
+<script>
+window.FORM_CONFIG = {
+  formId: 'lunch-learn',
+  servicio: 'lunch-learn',
+  linea: 'B2B',
+  defaultLang: 'en',
+
+  /* `plazo` guarda la respuesta tal como la dio la persona; `cuando` es el
+     código que el CRM ya usa para priorizar la bandeja, así que este
+     formulario entra en las mismas vistas que los otros cuatro. */
+  derive: function (campos) {
+    var mapa = { '30d': 'now', '2_3m': 'quarter', 'this_year': 'quarter', 'gathering': 'exploring' };
+    if (campos.plazo && mapa[campos.plazo]) campos.cuando = mapa[campos.plazo];
+  },
+
+  i18n: {
+    en: {
+      page_title: 'Complimentary Virtual Lunch-and-Learn',
+      eyebrow: 'CIELO Breathwork',
+      title: 'Bring a CIELO Experience to Your Team',
+      offer: 'Request a Complimentary 20-Minute Virtual Lunch-and-Learn.',
+      intro: 'Introduce your team to practical breath and nervous-system tools designed to help people respond to stress, improve focus, and work more effectively under pressure. Complete this short form and a member of the CIELO team will contact you to discuss your organization’s needs and schedule the experience.',
+
+      f_name: 'Your name',
+      ph_name: 'e.g. Maria Gonzalez',
+      f_email: 'Work email address',
+      ph_email_work: 'name@company.com',
+      f_phone: 'Phone number',
+      ph_phone: '+1 305 000 0000',
+      f_org: 'Organization or company name',
+      ph_company: 'Company name',
+      f_role: 'Your title or role',
+      ph_role: 'e.g. HR Director',
+
+      f_decision: 'Are you involved in scheduling or approving employee programs?',
+      dc_yes: 'Yes',
+      dc_recommend: 'I help make recommendations',
+      dc_connect: 'No, but I can connect you with the appropriate person',
+
+      f_size: 'Approximately how many people could attend?',
+      sz_lt10: 'Fewer than 10',
+      sz_10_25: '10–25',
+      sz_26_50: '26–50',
+      sz_gt50: 'More than 50',
+      sz_unsure: 'I’m not sure yet',
+
+      f_topics: 'What would be most helpful for your team?',
+      f_topics_hint: 'Choose all that apply.',
+      tp_stress: 'Managing workplace stress',
+      tp_focus: 'Improving focus and productivity',
+      tp_burnout: 'Preventing burnout',
+      tp_communication: 'Communicating under pressure',
+      tp_change: 'Leading through change',
+      tp_trust: 'Building team trust',
+      tp_sales: 'Supporting sales or client-facing employees',
+      tp_tools: 'Learning simple breathwork tools',
+      tp_other: 'Other',
+
+      f_session_lang: 'Would you prefer the session in English or Spanish?',
+      sl_english: 'English',
+      sl_spanish: 'Spanish',
+
+      f_timing: 'When would you ideally like to schedule the session?',
+      tm_30d: 'Within the next 30 days',
+      tm_2_3m: 'Within the next two to three months',
+      tm_this_year: 'Later this year',
+      tm_gathering: 'I’m gathering information for now',
+
+      f_contact_pref: 'Best way to contact you about scheduling?',
+      cp_email: 'Email',
+      cp_call: 'Call',
+      cp_whatsapp: 'WhatsApp',
+
+      f_note: 'Is there anything else you would like us to know about your team?',
+      ph_note: 'Optional. A couple of lines is plenty.',
+
+      consent: 'I agree that CIELO may contact me about scheduling this experience and send related CIELO resources. I can unsubscribe at any time.',
+      submit: 'Request my session',
+      sending: 'Sending…',
+      legal: 'Your details are used only to contact you about this request. We never share them with third parties.',
+
+      done_title: 'Thank you!',
+      done_text: 'Thank you for requesting a complimentary CIELO Virtual Lunch-and-Learn. A member of our team will contact you within 2–5 business days to learn more about your organization and discuss scheduling. We look forward to helping your team experience practical tools for responding to stress, improving focus, and leading more effectively.',
+
+      queued: 'No signal right now: your request was saved on this device and will be sent as soon as the connection returns.',
+      again: 'Submit another request',
+
+      err_banner: 'Something is missing. Please check the highlighted fields.',
+      err_required: 'This field is required.',
+      err_email: 'Please check the email address.',
+      err_phone: 'Please check the phone number.',
+      err_choose: 'Please choose an option.',
+      err_consent: 'We need your permission to contact you.',
+
+      admin_pending: 'requests saved on this device, not yet sent to the CRM.',
+      admin_download: 'Download CSV',
+      admin_clear: 'Clear',
+      admin_confirm: 'This deletes the requests saved on this device and they cannot be recovered. Have you already downloaded the CSV?'
+    },
+
+    es: {
+      page_title: 'Lunch-and-Learn virtual sin costo',
+      eyebrow: 'CIELO Breathwork',
+      title: 'Lleva una experiencia CIELO a tu equipo',
+      offer: 'Solicita un Lunch-and-Learn virtual de 20 minutos, sin costo.',
+      intro: 'Presenta a tu equipo herramientas prácticas de respiración y regulación del sistema nervioso, pensadas para responder mejor al estrés, mejorar el foco y trabajar con más eficacia bajo presión. Completa este formulario breve y alguien del equipo de CIELO te contactará para conocer las necesidades de tu organización y coordinar la sesión.',
+
+      f_name: 'Tu nombre',
+      ph_name: 'Ej. María González',
+      f_email: 'Correo de trabajo',
+      ph_email_work: 'nombre@empresa.com',
+      f_phone: 'Teléfono o WhatsApp',
+      ph_phone: '+1 305 000 0000',
+      f_org: 'Empresa u organización',
+      ph_company: 'Nombre de la empresa',
+      f_role: 'Tu cargo o rol',
+      ph_role: 'Ej. Directora de RR. HH.',
+
+      f_decision: '¿Participas en agendar o aprobar programas para el personal?',
+      dc_yes: 'Sí',
+      dc_recommend: 'Ayudo a hacer recomendaciones',
+      dc_connect: 'No, pero puedo conectarte con la persona indicada',
+
+      f_size: '¿Cuántas personas podrían asistir, aproximadamente?',
+      sz_lt10: 'Menos de 10',
+      sz_10_25: '10 a 25',
+      sz_26_50: '26 a 50',
+      sz_gt50: 'Más de 50',
+      sz_unsure: 'Todavía no estoy segura',
+
+      f_topics: '¿Qué le serviría más a tu equipo?',
+      f_topics_hint: 'Elige todas las que apliquen.',
+      tp_stress: 'Manejar el estrés en el trabajo',
+      tp_focus: 'Mejorar el foco y la productividad',
+      tp_burnout: 'Prevenir el agotamiento',
+      tp_communication: 'Comunicarse bajo presión',
+      tp_change: 'Liderar en el cambio',
+      tp_trust: 'Construir confianza en el equipo',
+      tp_sales: 'Apoyar a ventas o a quienes tratan con clientes',
+      tp_tools: 'Aprender herramientas simples de respiración',
+      tp_other: 'Otra',
+
+      f_session_lang: '¿Prefieres la sesión en inglés o en español?',
+      sl_english: 'Inglés',
+      sl_spanish: 'Español',
+
+      f_timing: '¿Para cuándo te gustaría agendar la sesión?',
+      tm_30d: 'En los próximos 30 días',
+      tm_2_3m: 'En dos o tres meses',
+      tm_this_year: 'Más adelante este año',
+      tm_gathering: 'Por ahora solo estoy reuniendo información',
+
+      f_contact_pref: '¿Cómo prefieres que te contactemos para agendar?',
+      cp_email: 'Correo',
+      cp_call: 'Llamada',
+      cp_whatsapp: 'WhatsApp',
+
+      f_note: '¿Algo más que debamos saber sobre tu equipo?',
+      ph_note: 'Opcional. Un par de líneas bastan.',
+
+      consent: 'Acepto que CIELO me contacte para coordinar esta experiencia y me envíe recursos relacionados. Puedo darme de baja cuando quiera.',
+      submit: 'Solicitar mi sesión',
+      sending: 'Enviando…',
+      legal: 'Tus datos se usan solo para contactarte sobre esta solicitud. No los compartimos con terceros.',
+
+      done_title: '¡Gracias!',
+      done_text: 'Gracias por solicitar un Lunch-and-Learn virtual de CIELO sin costo. Alguien de nuestro equipo te contactará en 2 a 5 días hábiles para conocer más sobre tu organización y coordinar la fecha. Nos entusiasma ayudar a tu equipo con herramientas prácticas para responder al estrés, mejorar el foco y liderar con más eficacia.',
+
+      queued: 'Sin señal en este momento: tu solicitud quedó guardada en este dispositivo y se enviará al recuperar conexión.',
+      again: 'Enviar otra solicitud',
+
+      err_banner: 'Falta completar algo. Revisa los campos marcados.',
+      err_required: 'Este campo es obligatorio.',
+      err_email: 'Revisa el correo electrónico.',
+      err_phone: 'Revisa el número de teléfono.',
+      err_choose: 'Elige una opción.',
+      err_consent: 'Necesitamos tu autorización para contactarte.',
+
+      admin_pending: 'solicitudes guardadas en este dispositivo, aún sin enviar al CRM.',
+      admin_download: 'Descargar CSV',
+      admin_clear: 'Vaciar',
+      admin_confirm: 'Esto borra las solicitudes guardadas en este dispositivo y no se pueden recuperar. ¿Ya descargaste el CSV?'
+    }
+  }
+};
+</script>
+<script src="assets/form-kit.js"></script>
+</body>
+</html>
