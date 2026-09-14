@@ -300,6 +300,9 @@ body.tema-cielo{
    ============================================================ */
 .result{display:none;text-align:left;margin:26px 0 0;}
 .result.on{display:block;}
+/* La pantalla de exito centra y estrecha sus parrafos a 38ch, que va bien
+   para una linea de gracias y fatal para una descripcion de resultado. */
+.result p{max-width:none;margin:0;}
 .result-card{
   background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
   padding:24px 22px;box-shadow:0 1px 3px rgba(19,27,46,.05);
